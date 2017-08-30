@@ -14,6 +14,7 @@ class Comment(Base):
     external_id     = db.Column(db.Integer, nullable=True)
     external_addr   = db.Column(db.String(512), nullable=True)
     external_date   = db.Column(db.DateTime,  default=db.func.current_timestamp())
+    via             = db.Column(db.String(128), nullable=False)
     ext_1           = db.Column(db.String(256), nullable=False)
     ext_2           = db.Column(db.String(512), nullable=False)
     status          = db.Column(db.SmallInteger, default=1)

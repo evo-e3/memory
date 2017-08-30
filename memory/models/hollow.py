@@ -3,9 +3,9 @@
 
 from memory.extensions.flasksqlalchemy import db
 
-class Twitter(Base):
+class Hollow(Base):
 
-    __tablename__ = 'm_twitter'
+    __tablename__ = 'm_hollow'
     
     content         = db.Column(db.String(2048), nullable=False)
     source_id       = db.Column(db.Integer, nullable=False)
@@ -15,4 +15,3 @@ class Twitter(Base):
     ext_1           = db.Column(db.String(256), nullable=False)
     ext_2           = db.Column(db.String(2048), nullable=False)
     status          = db.Column(db.SmallInteger, default=1)
-    
