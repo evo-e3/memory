@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Author: itabas <itabas016@gmail.com>
 
 from memory.models.post import Post
 from memory.models.twitter import Twitter
+from memory.models.hollow import Hollow
 from memory.models.comment import Comment
 from sqlalchemy import and_
 
@@ -26,6 +28,14 @@ def get_latest_twitters(cnt=10):
 def get_twitter(twitter_id):
     return Twitter.query.get(twitter_id)
 
+def get_hollows():
+    return Hollow.query.all()
+
+def get_latest_hollows(cnt=10):
+    return Hollow.query.order_by(Hollow.date_created.desc()).limit(cnt).all()
+
+def get_hollow(hollow_id):
+    return Hollow.query.get(hollow_id)
 
 def get_comments(cnt=20):
     return Comment.query.order_by(Comment.date_created.desc()).limit(cnt).all()

@@ -15,7 +15,12 @@
 
 <body>
 <div class="container">
+    {% block header %}
+        <div class="top-info"></div>
+        <nav></nav> 
+    {% endblock %}
     {% block content %}{% endblock %}
+    {% block aside %}{% endblock %}
 </div>
 {% block footer %}
     <center class="mt-2 mb-2">&copy; Copyright 2017 By <a href="https://itabas.com">itabas</a></center>

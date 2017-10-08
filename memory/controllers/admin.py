@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Author: itabas <itabas016@gmail.com>
 
 from flask import Blueprint
 from flask import current_app, request, abort, jsonify
 
-import memory.tasks.task as task
+import memory.tasks.task_refresh as task
 
 bp_admin = Blueprint('admin', __name__, url_prefix='/admin')
 

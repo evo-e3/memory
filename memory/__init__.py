@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Author: itabas <itabas016@gmail.com>
 
 from flask import Flask
 
@@ -20,8 +21,11 @@ def create_app(config):
     from memory.controllers.post import bp_post
     app.register_blueprint(bp_post)
 
-    from memory.controllers.tweet import bp_tweet
-    app.register_blueprint(bp_tweet)
+    from memory.controllers.twitter import bp_twitter
+    app.register_blueprint(bp_twitter)
+
+    from memory.controllers.hollow import bp_hollow
+    app.register_blueprint(bp_hollow)
 
     from memory.controllers.error import bp_error
     app.register_blueprint(bp_error)

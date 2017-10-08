@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Author: itabas <itabas016@gmail.com>
 
 import datetime
 import json
@@ -30,8 +31,11 @@ def parse_date(time_str):
 
 def load_hollows():
     response = requests.get(DOUBAN_HOLLOW_TOPIC)
+    if response.status_code != 200:
+        return
     soup = BeautifulSoup(response.text, 'html.parser')
 
+    hollows = []
     for ul_tag in soup.find_all('ul', { 'class': "topic-reply" }):
         for li_tag in ul_tag.find_all('li'):
             hollow = Hollow()
@@ -39,6 +43,8 @@ def load_hollows():
             
             # handle span tag - via field
             span_tag = li_tag.find('span', { 'class': "via" })
-            
 
-    
+
+
+            hollows.append(hollow)
+  

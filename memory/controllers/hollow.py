@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# Author: itabas <itabas016@gmail.com>
 
 import lxml.html
 from flask import render_template, Blueprint, json, abort
